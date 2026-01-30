@@ -1,0 +1,34 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+
+
+/* LIGHT MODE (VIOLET + WHITE) */
+:root {
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --text-color: #1f1f1f;
+  --subtext-color: #555;
+  --primary-color: #7403bf; /* VIOLET */
+  --border-color: #e5e5e5;
+}
+
+/* DARK MODE (BLACK + YELLOW) */
+[data-theme="dark"] {
+  --bg-color: #0b0b0b;
+  --card-bg: #111111;
+  --text-color: #ffffff;
+  --subtext-color: #cfcfcf;
+  --primary-color: #07ebc5cd; /* YELLOW */
+  --border-color: #2a2a2a;
+}
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
