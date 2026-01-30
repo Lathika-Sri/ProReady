@@ -9,3 +9,8 @@
     email : kani@gmail.com,
     password : kani123
 }
+{
+    name : Mawiyah,
+    email : maw@gmail.com,
+    password : maw123
+}
