@@ -1,43 +1,73 @@
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import RadialOrbitalTimelineDemo from "../demo/RadialOrbitalTimelineDemo";
 
-export default function Landing() {
+const Landing = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <Navbar />
+  
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <section className="min-h-screen flex items-center px-16">
-        <div className="w-1/2">
-          <h1 className="text-5xl font-bold">
-            Build Your <span className="text-purple-600">Career</span> with ProReady
+        {/* LEFT */}
+        <div className="flex-1">
+          <h1 className="text-5xl font-bold leading-tight">
+            Get <span style={{ color: "var(--primary-color)" }}>ProReady</span>
+            <br />
+            For Your Career Growth
           </h1>
+
           <p className="mt-6 text-lg">
-            Track, focus, and grow your placement preparation.
+            Track your progress, stay focused, and grow professionally.
           </p>
-          <Link
-            to="/register"
-            className="inline-block mt-8 px-6 py-3 rounded-full bg-purple-600 text-white"
+
+          <button
+            className="mt-8 px-6 py-3 rounded-lg"
+            style={{
+              background: "var(--primary-color)",
+              color: "#000",
+            }}
+            onClick={() => navigate("/register")}
           >
             Get Started
-          </Link>
+          </button>
         </div>
-        <div className="w-1/2" />
+
+        {/* RIGHT */}
+        <div className="flex-1 flex justify-center">
+          {/* Placeholder for your orbital image animation */}
+          <div className="w-[300px] h-[300px] rounded-full border-2 border-dashed"
+               style={{ borderColor: "var(--primary-color)" }}>
+            <div className="flex items-center justify-center h-full">
+              Track · Focus · Growth
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* ORBITAL SECTION */}
+      {/* PART 2 – ABOUT + TIMELINE */}
       <section className="min-h-screen flex items-center px-16">
-        <div className="w-1/2 text-5xl font-bold">
-          About <br /> ProReady
+        <div className="flex-1">
+          <h2 className="text-4xl font-bold">About ProReady</h2>
+          <p className="mt-4 text-lg">
+            ProReady helps students and professionals prepare, track, and grow
+            with structured roadmaps and visual progress.
+          </p>
         </div>
-        <div className="w-1/2">
+
+        <div className="flex-1">
           <RadialOrbitalTimelineDemo />
         </div>
       </section>
 
-      <Footer />
+      {/* FOOTER */}
+      <footer className="py-6 text-center">
+        © 2026 ProReady. All rights reserved.
+      </footer>
     </>
   );
-}
+};
+
+export default Landing;
